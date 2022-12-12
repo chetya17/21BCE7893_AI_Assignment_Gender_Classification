@@ -1,3 +1,4 @@
+#Project by Chetan Talele,21BCE7893
 from tensorflow.keras.preprocessing.image import ImageDataGenerator
 from tensorflow.keras.optimizers import Adam
 from tensorflow.keras.preprocessing.image import img_to_array
@@ -17,6 +18,7 @@ import glob
 epochs = 100
 lr = 1e-3
 batch_size = 64
+#I decided to resize all the images here
 img_dims = (96,96,3)
 
 data = []
@@ -30,6 +32,7 @@ random.shuffle(image_files)
 for img in image_files:
 
     image = cv2.imread(img)
+    #Resizing the image
     
     image = cv2.resize(image, (img_dims[0],img_dims[1]))
     image = img_to_array(image)
